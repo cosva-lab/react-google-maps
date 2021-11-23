@@ -2,9 +2,9 @@
 import _ from "lodash"
 import warning from "warning"
 import invariant from "invariant"
-import { getDisplayName } from "recompose"
 import PropTypes from "prop-types"
 import React from "react"
+import { getDisplayName } from "./utils"
 import { MAP } from "./constants"
 
 export function withGoogleMap(BaseComponent) {
@@ -53,7 +53,7 @@ export function withGoogleMap(BaseComponent) {
         `undefined` !== typeof google,
         `Make sure you've put a <script> tag in your <head> element to load Google Maps JavaScript API v3.
  If you're looking for built-in support to load it for you, use the "async/ScriptjsLoader" instead.
- See https://github.com/tomchentw/react-google-maps/pull/168`
+ See https://github.com/@cosva-lab/react-google-maps/pull/168`
       )
       // https://developers.google.com/maps/documentation/javascript/3.exp/reference#Map
       const map = new google.maps.Map(node)

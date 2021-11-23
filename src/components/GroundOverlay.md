@@ -7,7 +7,7 @@ const {
   withGoogleMap,
   GoogleMap,
   GroundOverlay,
-} = require("react-google-maps");
+} = require("@cosva-lab/react-google-maps");
 
 const MapWithGroundOverlay = compose(
   withScriptjs,

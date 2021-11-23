@@ -1,9 +1,10 @@
 import _ from "lodash"
 import invariant from "invariant"
 import canUseDOM from "can-use-dom"
-import { getDisplayName } from "recompose"
 import PropTypes from "prop-types"
 import React from "react"
+
+import { getDisplayName } from "./utils"
 
 const LOADING_STATE_NONE = `NONE`
 const LOADING_STATE_BEGIN = `BEGIN`

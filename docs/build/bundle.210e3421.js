@@ -37223,7 +37223,7 @@
   ) {
     var r = {
         recompose: n("./node_modules/recompose/es/Recompose.js"),
-        "react-google-maps": n("./src/index.js"),
+        "@cosva-lab/react-google-maps": n("./src/index.js"),
         react: n("./node_modules/react/index.js"),
       },
       o = n(
@@ -37237,7 +37237,7 @@
       {
         type: "code",
         content:
-          'const { compose, withProps } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  BicyclingLayer,\n} = require("react-google-maps");\n\nconst MapWithABicyclingLayer = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={12}\n    defaultCenter={{ lat: 34.17223, lng: -118.37897 }}\n  >\n    <BicyclingLayer autoUpdate />\n  </GoogleMap>\n);\n\n<MapWithABicyclingLayer />',
+          'const { compose, withProps } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  BicyclingLayer,\n} = require("@cosva-lab/react-google-maps");\n\nconst MapWithABicyclingLayer = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={12}\n    defaultCenter={{ lat: 34.17223, lng: -118.37897 }}\n  >\n    <BicyclingLayer autoUpdate />\n  </GoogleMap>\n);\n\n<MapWithABicyclingLayer />',
         settings: {},
         evalInContext: i,
       },
@@ -37250,7 +37250,7 @@
   ) {
     var r = {
         recompose: n("./node_modules/recompose/es/Recompose.js"),
-        "react-google-maps": n("./src/index.js"),
+        "@cosva-lab/react-google-maps": n("./src/index.js"),
         react: n("./node_modules/react/index.js"),
       },
       o = n(
@@ -37264,7 +37264,7 @@
       {
         type: "code",
         content:
-          'const { compose, withProps, lifecycle } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  DirectionsRenderer,\n} = require("react-google-maps");\n\nconst MapWithADirectionsRenderer = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n  }),\n  withScriptjs,\n  withGoogleMap,\n  lifecycle({\n    componentDidMount() {\n      const DirectionsService = new google.maps.DirectionsService();\n\n      DirectionsService.route({\n        origin: new google.maps.LatLng(41.8507300, -87.6512600),\n        destination: new google.maps.LatLng(41.8525800, -87.6514100),\n        travelMode: google.maps.TravelMode.DRIVING,\n      }, (result, status) => {\n        if (status === google.maps.DirectionsStatus.OK) {\n          this.setState({\n            directions: result,\n          });\n        } else {\n          console.error(`error fetching directions ${result}`);\n        }\n      });\n    }\n  })\n)(props =>\n  <GoogleMap\n    defaultZoom={7}\n    defaultCenter={new google.maps.LatLng(41.8507300, -87.6512600)}\n  >\n    {props.directions && <DirectionsRenderer directions={props.directions} />}\n  </GoogleMap>\n);\n\n<MapWithADirectionsRenderer />',
+          'const { compose, withProps, lifecycle } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  DirectionsRenderer,\n} = require("@cosva-lab/react-google-maps");\n\nconst MapWithADirectionsRenderer = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n  }),\n  withScriptjs,\n  withGoogleMap,\n  lifecycle({\n    componentDidMount() {\n      const DirectionsService = new google.maps.DirectionsService();\n\n      DirectionsService.route({\n        origin: new google.maps.LatLng(41.8507300, -87.6512600),\n        destination: new google.maps.LatLng(41.8525800, -87.6514100),\n        travelMode: google.maps.TravelMode.DRIVING,\n      }, (result, status) => {\n        if (status === google.maps.DirectionsStatus.OK) {\n          this.setState({\n            directions: result,\n          });\n        } else {\n          console.error(`error fetching directions ${result}`);\n        }\n      });\n    }\n  })\n)(props =>\n  <GoogleMap\n    defaultZoom={7}\n    defaultCenter={new google.maps.LatLng(41.8507300, -87.6512600)}\n  >\n    {props.directions && <DirectionsRenderer directions={props.directions} />}\n  </GoogleMap>\n);\n\n<MapWithADirectionsRenderer />',
         settings: {},
         evalInContext: i,
       },
@@ -37277,7 +37277,7 @@
   ) {
     var r = {
         recompose: n("./node_modules/recompose/es/Recompose.js"),
-        "react-google-maps": n("./src/index.js"),
+        "@cosva-lab/react-google-maps": n("./src/index.js"),
         react: n("./node_modules/react/index.js"),
       },
       o = n(
@@ -37291,7 +37291,7 @@
       {
         type: "code",
         content:
-          'const { compose, withProps } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  FusionTablesLayer,\n} = require("react-google-maps");\n\nconst MapWithAFusionTablesLayer = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={11}\n    defaultCenter={{ lat: 41.850033, lng: -87.6500523 }}\n  >\n    <FusionTablesLayer\n      url="http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml"\n      options={{\n        query: {\n          select: `Geocodable address`,\n          from: `1mZ53Z70NsChnBMm-qEYmSDOvLXgrreLTkQUvvg`\n        }\n      }}\n    />\n  </GoogleMap>\n);\n\n<MapWithAFusionTablesLayer />',
+          'const { compose, withProps } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  FusionTablesLayer,\n} = require("@cosva-lab/react-google-maps");\n\nconst MapWithAFusionTablesLayer = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={11}\n    defaultCenter={{ lat: 41.850033, lng: -87.6500523 }}\n  >\n    <FusionTablesLayer\n      url="http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml"\n      options={{\n        query: {\n          select: `Geocodable address`,\n          from: `1mZ53Z70NsChnBMm-qEYmSDOvLXgrreLTkQUvvg`\n        }\n      }}\n    />\n  </GoogleMap>\n);\n\n<MapWithAFusionTablesLayer />',
         settings: {},
         evalInContext: i,
       },
@@ -37307,7 +37307,7 @@
         "react-icons/lib/fa/anchor": n(
           "./node_modules/react-icons/lib/fa/anchor.js"
         ),
-        "react-google-maps": n("./src/index.js"),
+        "@cosva-lab/react-google-maps": n("./src/index.js"),
         react: n("./node_modules/react/index.js"),
       },
       o = n(
@@ -37321,7 +37321,7 @@
       {
         type: "code",
         content:
-          'const { compose, withProps, withState, withHandlers } = require("recompose");\nconst FaAnchor = require("react-icons/lib/fa/anchor");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  Marker,\n  InfoWindow,\n} = require("react-google-maps");\n\nconst MapWithControlledZoom = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n  }),\n  withState(\'zoom\', \'onZoomChange\', 8),\n  withHandlers(() => {\n    const refs = {\n      map: undefined,\n    }\n\n    return {\n      onMapMounted: () => ref => {\n        refs.map = ref\n      },\n      onZoomChanged: ({ onZoomChange }) => () => {\n        onZoomChange(refs.map.getZoom())\n      }\n    }\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultCenter={{ lat: -34.397, lng: 150.644 }}\n    zoom={props.zoom}\n    ref={props.onMapMounted}\n    onZoomChanged={props.onZoomChanged}\n  >\n    <Marker\n      position={{ lat: -34.397, lng: 150.644 }}\n      onClick={props.onToggleOpen}\n    >\n      <InfoWindow onCloseClick={props.onToggleOpen}>\n        <div>\n          <FaAnchor />\n          {" "}\n          Controlled zoom: {props.zoom}\n        </div>\n      </InfoWindow>\n    </Marker>\n  </GoogleMap>\n);\n\n<MapWithControlledZoom />',
+          'const { compose, withProps, withState, withHandlers } = require("recompose");\nconst FaAnchor = require("react-icons/lib/fa/anchor");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  Marker,\n  InfoWindow,\n} = require("@cosva-lab/react-google-maps");\n\nconst MapWithControlledZoom = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n  }),\n  withState(\'zoom\', \'onZoomChange\', 8),\n  withHandlers(() => {\n    const refs = {\n      map: undefined,\n    }\n\n    return {\n      onMapMounted: () => ref => {\n        refs.map = ref\n      },\n      onZoomChanged: ({ onZoomChange }) => () => {\n        onZoomChange(refs.map.getZoom())\n      }\n    }\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultCenter={{ lat: -34.397, lng: 150.644 }}\n    zoom={props.zoom}\n    ref={props.onMapMounted}\n    onZoomChanged={props.onZoomChanged}\n  >\n    <Marker\n      position={{ lat: -34.397, lng: 150.644 }}\n      onClick={props.onToggleOpen}\n    >\n      <InfoWindow onCloseClick={props.onToggleOpen}>\n        <div>\n          <FaAnchor />\n          {" "}\n          Controlled zoom: {props.zoom}\n        </div>\n      </InfoWindow>\n    </Marker>\n  </GoogleMap>\n);\n\n<MapWithControlledZoom />',
         settings: {},
         evalInContext: i,
       },
@@ -37334,7 +37334,7 @@
   ) {
     var r = {
         recompose: n("./node_modules/recompose/es/Recompose.js"),
-        "react-google-maps": n("./src/index.js"),
+        "@cosva-lab/react-google-maps": n("./src/index.js"),
         react: n("./node_modules/react/index.js"),
       },
       o = n(
@@ -37348,7 +37348,7 @@
       {
         type: "code",
         content:
-          'const { compose } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  GroundOverlay,\n} = require("react-google-maps");\n\nconst MapWithGroundOverlay = compose(\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={12}\n    defaultCenter={{lat: 40.740, lng: -74.18}}\n  >\n    <GroundOverlay\n      defaultUrl="https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg"\n      defaultBounds={new google.maps.LatLngBounds(\n        new google.maps.LatLng(40.712216, -74.22655),\n        new google.maps.LatLng(40.773941, -74.12544)\n      )}\n      defaultOpacity={.5}\n    />\n  </GoogleMap>\n);\n\n<MapWithGroundOverlay\n  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"\n  loadingElement={<div style={{ height: `100%` }} />}\n  containerElement={<div style={{ height: `400px` }} />}\n  mapElement={<div style={{ height: `100%` }} />}\n/>',
+          'const { compose } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  GroundOverlay,\n} = require("@cosva-lab/react-google-maps");\n\nconst MapWithGroundOverlay = compose(\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={12}\n    defaultCenter={{lat: 40.740, lng: -74.18}}\n  >\n    <GroundOverlay\n      defaultUrl="https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg"\n      defaultBounds={new google.maps.LatLngBounds(\n        new google.maps.LatLng(40.712216, -74.22655),\n        new google.maps.LatLng(40.773941, -74.12544)\n      )}\n      defaultOpacity={.5}\n    />\n  </GoogleMap>\n);\n\n<MapWithGroundOverlay\n  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"\n  loadingElement={<div style={{ height: `100%` }} />}\n  containerElement={<div style={{ height: `400px` }} />}\n  mapElement={<div style={{ height: `100%` }} />}\n/>',
         settings: {},
         evalInContext: i,
       },
@@ -37364,7 +37364,7 @@
         "react-icons/lib/fa/anchor": n(
           "./node_modules/react-icons/lib/fa/anchor.js"
         ),
-        "react-google-maps": n("./src/index.js"),
+        "@cosva-lab/react-google-maps": n("./src/index.js"),
         react: n("./node_modules/react/index.js"),
       },
       o = n(
@@ -37378,7 +37378,7 @@
       {
         type: "code",
         content:
-          'const { compose, withProps, withStateHandlers } = require("recompose");\nconst FaAnchor = require("react-icons/lib/fa/anchor");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  Marker,\n  InfoWindow,\n} = require("react-google-maps");\n\nconst MapWithAMakredInfoWindow = compose(\n  withStateHandlers(() => ({\n    isOpen: false,\n  }), {\n    onToggleOpen: ({ isOpen }) => () => ({\n      isOpen: !isOpen,\n    })\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={8}\n    defaultCenter={{ lat: -34.397, lng: 150.644 }}\n  >\n    <Marker\n      position={{ lat: -34.397, lng: 150.644 }}\n      onClick={props.onToggleOpen}\n    >\n      {props.isOpen && <InfoWindow onCloseClick={props.onToggleOpen}>\n        <FaAnchor />\n      </InfoWindow>}\n    </Marker>\n  </GoogleMap>\n);\n\n<MapWithAMakredInfoWindow\n  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"\n  loadingElement={<div style={{ height: `100%` }} />}\n  containerElement={<div style={{ height: `400px` }} />}\n  mapElement={<div style={{ height: `100%` }} />}\n/>',
+          'const { compose, withProps, withStateHandlers } = require("recompose");\nconst FaAnchor = require("react-icons/lib/fa/anchor");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  Marker,\n  InfoWindow,\n} = require("@cosva-lab/react-google-maps");\n\nconst MapWithAMakredInfoWindow = compose(\n  withStateHandlers(() => ({\n    isOpen: false,\n  }), {\n    onToggleOpen: ({ isOpen }) => () => ({\n      isOpen: !isOpen,\n    })\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={8}\n    defaultCenter={{ lat: -34.397, lng: 150.644 }}\n  >\n    <Marker\n      position={{ lat: -34.397, lng: 150.644 }}\n      onClick={props.onToggleOpen}\n    >\n      {props.isOpen && <InfoWindow onCloseClick={props.onToggleOpen}>\n        <FaAnchor />\n      </InfoWindow>}\n    </Marker>\n  </GoogleMap>\n);\n\n<MapWithAMakredInfoWindow\n  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"\n  loadingElement={<div style={{ height: `100%` }} />}\n  containerElement={<div style={{ height: `400px` }} />}\n  mapElement={<div style={{ height: `100%` }} />}\n/>',
         settings: {},
         evalInContext: i,
       },
@@ -37391,7 +37391,7 @@
   ) {
     var r = {
         recompose: n("./node_modules/recompose/es/Recompose.js"),
-        "react-google-maps": n("./src/index.js"),
+        "@cosva-lab/react-google-maps": n("./src/index.js"),
         react: n("./node_modules/react/index.js"),
       },
       o = n(
@@ -37405,7 +37405,7 @@
       {
         type: "code",
         content:
-          'const { compose, withProps } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  KmlLayer,\n} = require("react-google-maps");\n\nconst MapWithAKmlLayer = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={9}\n    defaultCenter={{ lat: 41.9, lng: -87.624 }}\n  >\n    <KmlLayer\n      url="http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml"\n      options={{ preserveViewport: true }}\n    />\n  </GoogleMap>\n);\n\n<MapWithAKmlLayer />',
+          'const { compose, withProps } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  KmlLayer,\n} = require("@cosva-lab/react-google-maps");\n\nconst MapWithAKmlLayer = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={9}\n    defaultCenter={{ lat: 41.9, lng: -87.624 }}\n  >\n    <KmlLayer\n      url="http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml"\n      options={{ preserveViewport: true }}\n    />\n  </GoogleMap>\n);\n\n<MapWithAKmlLayer />',
         settings: {},
         evalInContext: i,
       },
@@ -37418,7 +37418,7 @@
   ) {
     var r = {
         recompose: n("./node_modules/recompose/es/Recompose.js"),
-        "react-google-maps": n("./src/index.js"),
+        "@cosva-lab/react-google-maps": n("./src/index.js"),
         react: n("./node_modules/react/index.js"),
       },
       o = n(
@@ -37432,7 +37432,7 @@
       {
         type: "code",
         content:
-          'const { compose } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  Marker,\n} = require("react-google-maps");\n\nconst MapWithAMarker = compose(\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={8}\n    defaultCenter={{ lat: -34.397, lng: 150.644 }}\n  >\n    <Marker\n      position={{ lat: -34.397, lng: 150.644 }}\n    />\n  </GoogleMap>\n);\n\n<MapWithAMarker\n  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"\n  loadingElement={<div style={{ height: `100%` }} />}\n  containerElement={<div style={{ height: `400px` }} />}\n  mapElement={<div style={{ height: `100%` }} />}\n/>',
+          'const { compose } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  Marker,\n} = require("@cosva-lab/react-google-maps");\n\nconst MapWithAMarker = compose(\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={8}\n    defaultCenter={{ lat: -34.397, lng: 150.644 }}\n  >\n    <Marker\n      position={{ lat: -34.397, lng: 150.644 }}\n    />\n  </GoogleMap>\n);\n\n<MapWithAMarker\n  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"\n  loadingElement={<div style={{ height: `100%` }} />}\n  containerElement={<div style={{ height: `400px` }} />}\n  mapElement={<div style={{ height: `100%` }} />}\n/>',
         settings: {},
         evalInContext: i,
       },
@@ -37448,7 +37448,7 @@
         "react-icons/lib/fa/anchor": n(
           "./node_modules/react-icons/lib/fa/anchor.js"
         ),
-        "react-google-maps": n("./src/index.js"),
+        "@cosva-lab/react-google-maps": n("./src/index.js"),
         react: n("./node_modules/react/index.js"),
       },
       o = n(
@@ -37462,7 +37462,7 @@
       {
         type: "code",
         content:
-          'const { compose, withProps, withStateHandlers } = require("recompose");\nconst FaAnchor = require("react-icons/lib/fa/anchor");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  OverlayView,\n} = require("react-google-maps");\n\nconst getPixelPositionOffset = (width, height) => ({\n  x: -(width / 2),\n  y: -(height / 2),\n})\n\nconst MapWithAnOverlayView = compose(\n  withStateHandlers(() => ({\n    count: 0,\n  }), {\n    onClick: ({ count }) => () => ({\n      count: count + 1,\n    })\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={8}\n    defaultCenter={{ lat: -34.397, lng: 150.644 }}\n  >\n    <OverlayView\n      position={{ lat: -34.397, lng: 150.644 }}\n      /*\n       * An alternative to specifying position is specifying bounds.\n       * bounds can either be an instance of google.maps.LatLngBounds\n       * or an object in the following format:\n       * bounds={{\n       *    ne: { lat: 62.400471, lng: -150.005608 },\n       *    sw: { lat: 62.281819, lng: -150.287132 }\n       * }}\n       */\n      /*\n       * 1. Specify the pane the OverlayView will be rendered to. For\n       *    mouse interactivity, use `OverlayView.OVERLAY_MOUSE_TARGET`.\n       *    Defaults to `OverlayView.OVERLAY_LAYER`.\n       */\n      mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}\n      /*\n       * 2. Tweak the OverlayView\'s pixel position. In this case, we\'re\n       *    centering the content.\n       */\n      getPixelPositionOffset={getPixelPositionOffset}\n      /*\n       * 3. Create OverlayView content using standard React components.\n       */\n    >\n      <div style={{ background: `white`, border: `1px solid #ccc`, padding: 15 }}>\n        <h1>OverlayView</h1>\n        <button onClick={props.onClick} style={{ height: 60 }}>\n          I have been clicked {props.count} time{props.count > 1 ? `s` : ``}\n        </button>\n      </div>\n    </OverlayView>\n  </GoogleMap>\n);\n\n<MapWithAnOverlayView\n  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"\n  loadingElement={<div style={{ height: `100%` }} />}\n  containerElement={<div style={{ height: `400px` }} />}\n  mapElement={<div style={{ height: `100%` }} />}\n/>',
+          'const { compose, withProps, withStateHandlers } = require("recompose");\nconst FaAnchor = require("react-icons/lib/fa/anchor");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  OverlayView,\n} = require("@cosva-lab/react-google-maps");\n\nconst getPixelPositionOffset = (width, height) => ({\n  x: -(width / 2),\n  y: -(height / 2),\n})\n\nconst MapWithAnOverlayView = compose(\n  withStateHandlers(() => ({\n    count: 0,\n  }), {\n    onClick: ({ count }) => () => ({\n      count: count + 1,\n    })\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={8}\n    defaultCenter={{ lat: -34.397, lng: 150.644 }}\n  >\n    <OverlayView\n      position={{ lat: -34.397, lng: 150.644 }}\n      /*\n       * An alternative to specifying position is specifying bounds.\n       * bounds can either be an instance of google.maps.LatLngBounds\n       * or an object in the following format:\n       * bounds={{\n       *    ne: { lat: 62.400471, lng: -150.005608 },\n       *    sw: { lat: 62.281819, lng: -150.287132 }\n       * }}\n       */\n      /*\n       * 1. Specify the pane the OverlayView will be rendered to. For\n       *    mouse interactivity, use `OverlayView.OVERLAY_MOUSE_TARGET`.\n       *    Defaults to `OverlayView.OVERLAY_LAYER`.\n       */\n      mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}\n      /*\n       * 2. Tweak the OverlayView\'s pixel position. In this case, we\'re\n       *    centering the content.\n       */\n      getPixelPositionOffset={getPixelPositionOffset}\n      /*\n       * 3. Create OverlayView content using standard React components.\n       */\n    >\n      <div style={{ background: `white`, border: `1px solid #ccc`, padding: 15 }}>\n        <h1>OverlayView</h1>\n        <button onClick={props.onClick} style={{ height: 60 }}>\n          I have been clicked {props.count} time{props.count > 1 ? `s` : ``}\n        </button>\n      </div>\n    </OverlayView>\n  </GoogleMap>\n);\n\n<MapWithAnOverlayView\n  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"\n  loadingElement={<div style={{ height: `100%` }} />}\n  containerElement={<div style={{ height: `400px` }} />}\n  mapElement={<div style={{ height: `100%` }} />}\n/>',
         settings: {},
         evalInContext: i,
       },
@@ -37478,7 +37478,7 @@
         "react-icons/lib/fa/anchor": n(
           "./node_modules/react-icons/lib/fa/anchor.js"
         ),
-        "react-google-maps": n("./src/index.js"),
+        "@cosva-lab/react-google-maps": n("./src/index.js"),
         react: n("./node_modules/react/index.js"),
       },
       o = n(
@@ -37492,7 +37492,7 @@
       {
         type: "code",
         content:
-          'const { compose, withProps } = require("recompose");\nconst FaAnchor = require("react-icons/lib/fa/anchor");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  StreetViewPanorama,\n  OverlayView,\n} = require("react-google-maps");\n\nconst getPixelPositionOffset = (width, height) => ({\n  x: -(width / 2),\n  y: -(height / 2),\n})\n\nconst StreetViewPanormaWithAnOverlayView = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n    center: { lat: 49.2853171, lng: -123.1119202 },\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap defaultZoom={8} defaultCenter={props.center}>\n    <StreetViewPanorama defaultPosition={props.center} visible>\n      <OverlayView\n        position={{ lat: 49.28590291211115, lng: -123.11248166065218 }}\n          mapPaneName={OverlayView.OVERLAY_LAYER}\n          getPixelPositionOffset={getPixelPositionOffset}\n      >\n        <div style={{ background: `red`, color: `white`, padding: 5, borderRadius: `50%` }}>\n          OverlayView\n        </div>\n      </OverlayView>\n    </StreetViewPanorama>\n  </GoogleMap>\n);\n\n<StreetViewPanormaWithAnOverlayView />',
+          'const { compose, withProps } = require("recompose");\nconst FaAnchor = require("react-icons/lib/fa/anchor");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  StreetViewPanorama,\n  OverlayView,\n} = require("@cosva-lab/react-google-maps");\n\nconst getPixelPositionOffset = (width, height) => ({\n  x: -(width / 2),\n  y: -(height / 2),\n})\n\nconst StreetViewPanormaWithAnOverlayView = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n    center: { lat: 49.2853171, lng: -123.1119202 },\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap defaultZoom={8} defaultCenter={props.center}>\n    <StreetViewPanorama defaultPosition={props.center} visible>\n      <OverlayView\n        position={{ lat: 49.28590291211115, lng: -123.11248166065218 }}\n          mapPaneName={OverlayView.OVERLAY_LAYER}\n          getPixelPositionOffset={getPixelPositionOffset}\n      >\n        <div style={{ background: `red`, color: `white`, padding: 5, borderRadius: `50%` }}>\n          OverlayView\n        </div>\n      </OverlayView>\n    </StreetViewPanorama>\n  </GoogleMap>\n);\n\n<StreetViewPanormaWithAnOverlayView />',
         settings: {},
         evalInContext: i,
       },
@@ -37505,7 +37505,7 @@
   ) {
     var r = {
         recompose: n("./node_modules/recompose/es/Recompose.js"),
-        "react-google-maps": n("./src/index.js"),
+        "@cosva-lab/react-google-maps": n("./src/index.js"),
         react: n("./node_modules/react/index.js"),
       },
       o = n(
@@ -37519,7 +37519,7 @@
       {
         type: "code",
         content:
-          'const { compose, withProps } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  TrafficLayer,\n} = require("react-google-maps");\n\nconst MapWithATrafficLayer = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={8}\n    defaultCenter={{ lat: 41.9, lng: -87.624 }}\n  >\n    <TrafficLayer autoUpdate />\n  </GoogleMap>\n);\n\n<MapWithATrafficLayer />',
+          'const { compose, withProps } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  TrafficLayer,\n} = require("@cosva-lab/react-google-maps");\n\nconst MapWithATrafficLayer = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={8}\n    defaultCenter={{ lat: 41.9, lng: -87.624 }}\n  >\n    <TrafficLayer autoUpdate />\n  </GoogleMap>\n);\n\n<MapWithATrafficLayer />',
         settings: {},
         evalInContext: i,
       },
@@ -37532,8 +37532,8 @@
   ) {
     var r = {
         recompose: n("./node_modules/recompose/es/Recompose.js"),
-        "react-google-maps": n("./src/index.js"),
-        "react-google-maps/lib/components/addons/InfoBox": n(
+        "@cosva-lab/react-google-maps": n("./src/index.js"),
+        "@cosva-lab/react-google-maps/lib/components/addons/InfoBox": n(
           "./src/components/addons/InfoBox.jsx"
         ),
         "./demoFancyMapStyles.json": n(
@@ -37552,7 +37552,7 @@
       {
         type: "code",
         content:
-          'const { compose, withProps, withStateHandlers } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n} = require("react-google-maps");\nconst { InfoBox } = require("react-google-maps/lib/components/addons/InfoBox");\nconst demoFancyMapStyles = require("./demoFancyMapStyles.json");\n\nconst StyledMapWithAnInfoBox = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n    center: { lat: 25.03, lng: 121.6 },\n  }),\n  withStateHandlers(() => ({\n    isOpen: false,\n  }), {\n    onToggleOpen: ({ isOpen }) => () => ({\n      isOpen: !isOpen,\n    })\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={5}\n    defaultCenter={props.center}\n    defaultOptions={{ styles: demoFancyMapStyles }}\n  >\n    <InfoBox\n      defaultPosition={new google.maps.LatLng(props.center.lat, props.center.lng)}\n      options={{ closeBoxURL: ``, enableEventPropagation: true }}\n    >\n      <div style={{ backgroundColor: `yellow`, opacity: 0.75, padding: `12px` }}>\n        <div style={{ fontSize: `16px`, fontColor: `#08233B` }}>\n          Hello, Taipei!\n        </div>\n      </div>\n    </InfoBox>\n    <Marker\n      position={{ lat: 22.6273, lng: 120.3014 }}\n      onClick={props.onToggleOpen}\n    >\n      {props.isOpen && <InfoBox\n        onCloseClick={props.onToggleOpen}\n        options={{ closeBoxURL: ``, enableEventPropagation: true }}\n      >\n        <div style={{ backgroundColor: `yellow`, opacity: 0.75, padding: `12px` }}>\n          <div style={{ fontSize: `16px`, fontColor: `#08233B` }}>\n            Hello, Kaohsiung!\n          </div>\n        </div>\n      </InfoBox>}\n    </Marker>\n  </GoogleMap>\n);\n\n<StyledMapWithAnInfoBox />',
+          'const { compose, withProps, withStateHandlers } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n} = require("@cosva-lab/react-google-maps");\nconst { InfoBox } = require("@cosva-lab/react-google-maps/lib/components/addons/InfoBox");\nconst demoFancyMapStyles = require("./demoFancyMapStyles.json");\n\nconst StyledMapWithAnInfoBox = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n    center: { lat: 25.03, lng: 121.6 },\n  }),\n  withStateHandlers(() => ({\n    isOpen: false,\n  }), {\n    onToggleOpen: ({ isOpen }) => () => ({\n      isOpen: !isOpen,\n    })\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={5}\n    defaultCenter={props.center}\n    defaultOptions={{ styles: demoFancyMapStyles }}\n  >\n    <InfoBox\n      defaultPosition={new google.maps.LatLng(props.center.lat, props.center.lng)}\n      options={{ closeBoxURL: ``, enableEventPropagation: true }}\n    >\n      <div style={{ backgroundColor: `yellow`, opacity: 0.75, padding: `12px` }}>\n        <div style={{ fontSize: `16px`, fontColor: `#08233B` }}>\n          Hello, Taipei!\n        </div>\n      </div>\n    </InfoBox>\n    <Marker\n      position={{ lat: 22.6273, lng: 120.3014 }}\n      onClick={props.onToggleOpen}\n    >\n      {props.isOpen && <InfoBox\n        onCloseClick={props.onToggleOpen}\n        options={{ closeBoxURL: ``, enableEventPropagation: true }}\n      >\n        <div style={{ backgroundColor: `yellow`, opacity: 0.75, padding: `12px` }}>\n          <div style={{ fontSize: `16px`, fontColor: `#08233B` }}>\n            Hello, Kaohsiung!\n          </div>\n        </div>\n      </InfoBox>}\n    </Marker>\n  </GoogleMap>\n);\n\n<StyledMapWithAnInfoBox />',
         settings: {},
         evalInContext: i,
       },
@@ -37568,8 +37568,8 @@
           "./node_modules/isomorphic-fetch/fetch-npm-browserify.js"
         ),
         recompose: n("./node_modules/recompose/es/Recompose.js"),
-        "react-google-maps": n("./src/index.js"),
-        "react-google-maps/lib/components/addons/MarkerClusterer": n(
+        "@cosva-lab/react-google-maps": n("./src/index.js"),
+        "@cosva-lab/react-google-maps/lib/components/addons/MarkerClusterer": n(
           "./src/components/addons/MarkerClusterer.jsx"
         ),
         react: n("./node_modules/react/index.js"),
@@ -37585,7 +37585,7 @@
       {
         type: "code",
         content:
-          'const fetch = require("isomorphic-fetch");\nconst { compose, withProps, withHandlers } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  Marker,\n} = require("react-google-maps");\nconst { MarkerClusterer } = require("react-google-maps/lib/components/addons/MarkerClusterer");\n\nconst MapWithAMarkerClusterer = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n  }),\n  withHandlers({\n    onMarkerClustererClick: () => (markerClusterer) => {\n      const clickedMarkers = markerClusterer.getMarkers()\n      console.log(`Current clicked markers length: ${clickedMarkers.length}`)\n      console.log(clickedMarkers)\n    },\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={3}\n    defaultCenter={{ lat: 25.0391667, lng: 121.525 }}\n  >\n    <MarkerClusterer\n      onClick={props.onMarkerClustererClick}\n      averageCenter\n      enableRetinaIcons\n      gridSize={60}\n    >\n      {props.markers.map(marker => (\n        <Marker\n          key={marker.photo_id}\n          position={{ lat: marker.latitude, lng: marker.longitude }}\n        />\n      ))}\n    </MarkerClusterer>\n  </GoogleMap>\n);\n\nclass DemoApp extends React.PureComponent {\n  componentWillMount() {\n    this.setState({ markers: [] })\n  }\n\n  componentDidMount() {\n    const url = [\n      // Length issue\n      `https://gist.githubusercontent.com`,\n      `/farrrr/dfda7dd7fccfec5474d3`,\n      `/raw/758852bbc1979f6c4522ab4e92d1c92cba8fb0dc/data.json`\n    ].join("")\n\n    fetch(url)\n      .then(res => res.json())\n      .then(data => {\n        this.setState({ markers: data.photos });\n      });\n  }\n\n  render() {\n    return (\n      <MapWithAMarkerClusterer markers={this.state.markers} />\n    )\n  }\n}\n\n<DemoApp />',
+          'const fetch = require("isomorphic-fetch");\nconst { compose, withProps, withHandlers } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  Marker,\n} = require("@cosva-lab/react-google-maps");\nconst { MarkerClusterer } = require("@cosva-lab/react-google-maps/lib/components/addons/MarkerClusterer");\n\nconst MapWithAMarkerClusterer = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n  }),\n  withHandlers({\n    onMarkerClustererClick: () => (markerClusterer) => {\n      const clickedMarkers = markerClusterer.getMarkers()\n      console.log(`Current clicked markers length: ${clickedMarkers.length}`)\n      console.log(clickedMarkers)\n    },\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={3}\n    defaultCenter={{ lat: 25.0391667, lng: 121.525 }}\n  >\n    <MarkerClusterer\n      onClick={props.onMarkerClustererClick}\n      averageCenter\n      enableRetinaIcons\n      gridSize={60}\n    >\n      {props.markers.map(marker => (\n        <Marker\n          key={marker.photo_id}\n          position={{ lat: marker.latitude, lng: marker.longitude }}\n        />\n      ))}\n    </MarkerClusterer>\n  </GoogleMap>\n);\n\nclass DemoApp extends React.PureComponent {\n  componentWillMount() {\n    this.setState({ markers: [] })\n  }\n\n  componentDidMount() {\n    const url = [\n      // Length issue\n      `https://gist.githubusercontent.com`,\n      `/farrrr/dfda7dd7fccfec5474d3`,\n      `/raw/758852bbc1979f6c4522ab4e92d1c92cba8fb0dc/data.json`\n    ].join("")\n\n    fetch(url)\n      .then(res => res.json())\n      .then(data => {\n        this.setState({ markers: data.photos });\n      });\n  }\n\n  render() {\n    return (\n      <MapWithAMarkerClusterer markers={this.state.markers} />\n    )\n  }\n}\n\n<DemoApp />',
         settings: {},
         evalInContext: i,
       },
@@ -37598,8 +37598,8 @@
   ) {
     var r = {
         recompose: n("./node_modules/recompose/es/Recompose.js"),
-        "react-google-maps": n("./src/index.js"),
-        "react-google-maps/lib/components/addons/MarkerWithLabel": n(
+        "@cosva-lab/react-google-maps": n("./src/index.js"),
+        "@cosva-lab/react-google-maps/lib/components/addons/MarkerWithLabel": n(
           "./src/components/addons/MarkerWithLabel.jsx"
         ),
         react: n("./node_modules/react/index.js"),
@@ -37615,7 +37615,7 @@
       {
         type: "code",
         content:
-          'const { compose } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n} = require("react-google-maps");\nconst { MarkerWithLabel } = require("react-google-maps/lib/components/addons/MarkerWithLabel");\n\nconst MapWithAMarkerWithLabel = compose(\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={8}\n    defaultCenter={{ lat: -34.397, lng: 150.644 }}\n  >\n    <MarkerWithLabel\n      position={{ lat: -34.397, lng: 150.644 }}\n      labelAnchor={new google.maps.Point(0, 0)}\n      labelStyle={{backgroundColor: "yellow", fontSize: "32px", padding: "16px"}}\n    >\n      <div>Hello There!</div>\n    </MarkerWithLabel>\n  </GoogleMap>\n);\n\n<MapWithAMarkerWithLabel\n  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"\n  loadingElement={<div style={{ height: `100%` }} />}\n  containerElement={<div style={{ height: `400px` }} />}\n  mapElement={<div style={{ height: `100%` }} />}\n/>',
+          'const { compose } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n} = require("@cosva-lab/react-google-maps");\nconst { MarkerWithLabel } = require("@cosva-lab/react-google-maps/lib/components/addons/MarkerWithLabel");\n\nconst MapWithAMarkerWithLabel = compose(\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={8}\n    defaultCenter={{ lat: -34.397, lng: 150.644 }}\n  >\n    <MarkerWithLabel\n      position={{ lat: -34.397, lng: 150.644 }}\n      labelAnchor={new google.maps.Point(0, 0)}\n      labelStyle={{backgroundColor: "yellow", fontSize: "32px", padding: "16px"}}\n    >\n      <div>Hello There!</div>\n    </MarkerWithLabel>\n  </GoogleMap>\n);\n\n<MapWithAMarkerWithLabel\n  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"\n  loadingElement={<div style={{ height: `100%` }} />}\n  containerElement={<div style={{ height: `400px` }} />}\n  mapElement={<div style={{ height: `100%` }} />}\n/>',
         settings: {},
         evalInContext: i,
       },
@@ -37628,8 +37628,8 @@
   ) {
     var r = {
         recompose: n("./node_modules/recompose/es/Recompose.js"),
-        "react-google-maps": n("./src/index.js"),
-        "react-google-maps/lib/components/drawing/DrawingManager": n(
+        "@cosva-lab/react-google-maps": n("./src/index.js"),
+        "@cosva-lab/react-google-maps/lib/components/drawing/DrawingManager": n(
           "./src/components/drawing/DrawingManager.jsx"
         ),
         react: n("./node_modules/react/index.js"),
@@ -37645,7 +37645,7 @@
       {
         type: "code",
         content:
-          'const { compose, withProps } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n} = require("react-google-maps");\nconst { DrawingManager } = require("react-google-maps/lib/components/drawing/DrawingManager");\n\nconst MapWithADrawingManager = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={8}\n    defaultCenter={new google.maps.LatLng(-34.397, 150.644)}\n  >\n    <DrawingManager\n      defaultDrawingMode={google.maps.drawing.OverlayType.CIRCLE}\n      defaultOptions={{\n        drawingControl: true,\n        drawingControlOptions: {\n          position: google.maps.ControlPosition.TOP_CENTER,\n          drawingModes: [\n            google.maps.drawing.OverlayType.CIRCLE,\n            google.maps.drawing.OverlayType.POLYGON,\n            google.maps.drawing.OverlayType.POLYLINE,\n            google.maps.drawing.OverlayType.RECTANGLE,\n          ],\n        },\n        circleOptions: {\n          fillColor: `#ffff00`,\n          fillOpacity: 1,\n          strokeWeight: 5,\n          clickable: false,\n          editable: true,\n          zIndex: 1,\n        },\n      }}\n    />\n  </GoogleMap>\n);\n\n<MapWithADrawingManager />',
+          'const { compose, withProps } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n} = require("@cosva-lab/react-google-maps");\nconst { DrawingManager } = require("@cosva-lab/react-google-maps/lib/components/drawing/DrawingManager");\n\nconst MapWithADrawingManager = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    defaultZoom={8}\n    defaultCenter={new google.maps.LatLng(-34.397, 150.644)}\n  >\n    <DrawingManager\n      defaultDrawingMode={google.maps.drawing.OverlayType.CIRCLE}\n      defaultOptions={{\n        drawingControl: true,\n        drawingControlOptions: {\n          position: google.maps.ControlPosition.TOP_CENTER,\n          drawingModes: [\n            google.maps.drawing.OverlayType.CIRCLE,\n            google.maps.drawing.OverlayType.POLYGON,\n            google.maps.drawing.OverlayType.POLYLINE,\n            google.maps.drawing.OverlayType.RECTANGLE,\n          ],\n        },\n        circleOptions: {\n          fillColor: `#ffff00`,\n          fillOpacity: 1,\n          strokeWeight: 5,\n          clickable: false,\n          editable: true,\n          zIndex: 1,\n        },\n      }}\n    />\n  </GoogleMap>\n);\n\n<MapWithADrawingManager />',
         settings: {},
         evalInContext: i,
       },
@@ -37659,8 +37659,8 @@
     var r = {
         lodash: n("./node_modules/lodash/lodash.js"),
         recompose: n("./node_modules/recompose/es/Recompose.js"),
-        "react-google-maps": n("./src/index.js"),
-        "react-google-maps/lib/components/places/SearchBox": n(
+        "@cosva-lab/react-google-maps": n("./src/index.js"),
+        "@cosva-lab/react-google-maps/lib/components/places/SearchBox": n(
           "./src/components/places/SearchBox.jsx"
         ),
         react: n("./node_modules/react/index.js"),
@@ -37676,7 +37676,7 @@
       {
         type: "code",
         content:
-          'const _ = require("lodash");\nconst { compose, withProps, lifecycle } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  Marker,\n} = require("react-google-maps");\nconst { SearchBox } = require("react-google-maps/lib/components/places/SearchBox");\n\nconst MapWithASearchBox = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n  }),\n  lifecycle({\n    componentWillMount() {\n      const refs = {}\n\n      this.setState({\n        bounds: null,\n        center: {\n          lat: 41.9, lng: -87.624\n        },\n        markers: [],\n        onMapMounted: ref => {\n          refs.map = ref;\n        },\n        onBoundsChanged: () => {\n          this.setState({\n            bounds: refs.map.getBounds(),\n            center: refs.map.getCenter(),\n          })\n        },\n        onSearchBoxMounted: ref => {\n          refs.searchBox = ref;\n        },\n        onPlacesChanged: () => {\n          const places = refs.searchBox.getPlaces();\n          const bounds = new google.maps.LatLngBounds();\n\n          places.forEach(place => {\n            if (place.geometry.viewport) {\n              bounds.union(place.geometry.viewport)\n            } else {\n              bounds.extend(place.geometry.location)\n            }\n          });\n          const nextMarkers = places.map(place => ({\n            position: place.geometry.location,\n          }));\n          const nextCenter = _.get(nextMarkers, \'0.position\', this.state.center);\n\n          this.setState({\n            center: nextCenter,\n            markers: nextMarkers,\n          });\n          // refs.map.fitBounds(bounds);\n        },\n      })\n    },\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    ref={props.onMapMounted}\n    defaultZoom={15}\n    center={props.center}\n    onBoundsChanged={props.onBoundsChanged}\n  >\n    <SearchBox\n      ref={props.onSearchBoxMounted}\n      bounds={props.bounds}\n      controlPosition={google.maps.ControlPosition.TOP_LEFT}\n      onPlacesChanged={props.onPlacesChanged}\n    >\n      <input\n        type="text"\n        placeholder="Customized your placeholder"\n        style={{\n          boxSizing: `border-box`,\n          border: `1px solid transparent`,\n          width: `240px`,\n          height: `32px`,\n          marginTop: `27px`,\n          padding: `0 12px`,\n          borderRadius: `3px`,\n          boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,\n          fontSize: `14px`,\n          outline: `none`,\n          textOverflow: `ellipses`,\n        }}\n      />\n    </SearchBox>\n    {props.markers.map((marker, index) =>\n      <Marker key={index} position={marker.position} />\n    )}\n  </GoogleMap>\n);\n\n<MapWithASearchBox />',
+          'const _ = require("lodash");\nconst { compose, withProps, lifecycle } = require("recompose");\nconst {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  Marker,\n} = require("@cosva-lab/react-google-maps");\nconst { SearchBox } = require("@cosva-lab/react-google-maps/lib/components/places/SearchBox");\n\nconst MapWithASearchBox = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n    mapElement: <div style={{ height: `100%` }} />,\n  }),\n  lifecycle({\n    componentWillMount() {\n      const refs = {}\n\n      this.setState({\n        bounds: null,\n        center: {\n          lat: 41.9, lng: -87.624\n        },\n        markers: [],\n        onMapMounted: ref => {\n          refs.map = ref;\n        },\n        onBoundsChanged: () => {\n          this.setState({\n            bounds: refs.map.getBounds(),\n            center: refs.map.getCenter(),\n          })\n        },\n        onSearchBoxMounted: ref => {\n          refs.searchBox = ref;\n        },\n        onPlacesChanged: () => {\n          const places = refs.searchBox.getPlaces();\n          const bounds = new google.maps.LatLngBounds();\n\n          places.forEach(place => {\n            if (place.geometry.viewport) {\n              bounds.union(place.geometry.viewport)\n            } else {\n              bounds.extend(place.geometry.location)\n            }\n          });\n          const nextMarkers = places.map(place => ({\n            position: place.geometry.location,\n          }));\n          const nextCenter = _.get(nextMarkers, \'0.position\', this.state.center);\n\n          this.setState({\n            center: nextCenter,\n            markers: nextMarkers,\n          });\n          // refs.map.fitBounds(bounds);\n        },\n      })\n    },\n  }),\n  withScriptjs,\n  withGoogleMap\n)(props =>\n  <GoogleMap\n    ref={props.onMapMounted}\n    defaultZoom={15}\n    center={props.center}\n    onBoundsChanged={props.onBoundsChanged}\n  >\n    <SearchBox\n      ref={props.onSearchBoxMounted}\n      bounds={props.bounds}\n      controlPosition={google.maps.ControlPosition.TOP_LEFT}\n      onPlacesChanged={props.onPlacesChanged}\n    >\n      <input\n        type="text"\n        placeholder="Customized your placeholder"\n        style={{\n          boxSizing: `border-box`,\n          border: `1px solid transparent`,\n          width: `240px`,\n          height: `32px`,\n          marginTop: `27px`,\n          padding: `0 12px`,\n          borderRadius: `3px`,\n          boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,\n          fontSize: `14px`,\n          outline: `none`,\n          textOverflow: `ellipses`,\n        }}\n      />\n    </SearchBox>\n    {props.markers.map((marker, index) =>\n      <Marker key={index} position={marker.position} />\n    )}\n  </GoogleMap>\n);\n\n<MapWithASearchBox />',
         settings: {},
         evalInContext: i,
       },
@@ -37689,8 +37689,8 @@
   ) {
     var r = {
         recompose: n("./node_modules/recompose/es/Recompose.js"),
-        "react-google-maps": n("./src/index.js"),
-        "react-google-maps/lib/components/places/StandaloneSearchBox": n(
+        "@cosva-lab/react-google-maps": n("./src/index.js"),
+        "@cosva-lab/react-google-maps/lib/components/places/StandaloneSearchBox": n(
           "./src/components/places/StandaloneSearchBox.jsx"
         ),
         react: n("./node_modules/react/index.js"),
@@ -37706,7 +37706,7 @@
       {
         type: "code",
         content:
-          'const { compose, withProps, lifecycle } = require("recompose");\nconst {\n  withScriptjs,\n} = require("react-google-maps");\nconst { StandaloneSearchBox } = require("react-google-maps/lib/components/places/StandaloneSearchBox");\n\nconst PlacesWithStandaloneSearchBox = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n  }),\n  lifecycle({\n    componentWillMount() {\n      const refs = {}\n\n      this.setState({\n        places: [],\n        onSearchBoxMounted: ref => {\n          refs.searchBox = ref;\n        },\n        onPlacesChanged: () => {\n          const places = refs.searchBox.getPlaces();\n\n          this.setState({\n            places,\n          });\n        },\n      })\n    },\n  }),\n  withScriptjs  \n)(props =>\n  <div data-standalone-searchbox="">\n    <StandaloneSearchBox\n      ref={props.onSearchBoxMounted}\n      bounds={props.bounds}\n      onPlacesChanged={props.onPlacesChanged}\n    >\n      <input\n        type="text"\n        placeholder="Customized your placeholder"\n        style={{\n          boxSizing: `border-box`,\n          border: `1px solid transparent`,\n          width: `240px`,\n          height: `32px`,\n          padding: `0 12px`,\n          borderRadius: `3px`,\n          boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,\n          fontSize: `14px`,\n          outline: `none`,\n          textOverflow: `ellipses`,\n        }}\n      />\n    </StandaloneSearchBox>\n    <ol>\n      {props.places.map(({ place_id, formatted_address, geometry: { location } }) =>\n        <li key={place_id}>\n          {formatted_address}\n          {" at "}\n          ({location.lat()}, {location.lng()})\n        </li>\n      )}\n    </ol>\n  </div>\n);\n\n<PlacesWithStandaloneSearchBox />',
+          'const { compose, withProps, lifecycle } = require("recompose");\nconst {\n  withScriptjs,\n} = require("@cosva-lab/react-google-maps");\nconst { StandaloneSearchBox } = require("@cosva-lab/react-google-maps/lib/components/places/StandaloneSearchBox");\n\nconst PlacesWithStandaloneSearchBox = compose(\n  withProps({\n    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",\n    loadingElement: <div style={{ height: `100%` }} />,\n    containerElement: <div style={{ height: `400px` }} />,\n  }),\n  lifecycle({\n    componentWillMount() {\n      const refs = {}\n\n      this.setState({\n        places: [],\n        onSearchBoxMounted: ref => {\n          refs.searchBox = ref;\n        },\n        onPlacesChanged: () => {\n          const places = refs.searchBox.getPlaces();\n\n          this.setState({\n            places,\n          });\n        },\n      })\n    },\n  }),\n  withScriptjs  \n)(props =>\n  <div data-standalone-searchbox="">\n    <StandaloneSearchBox\n      ref={props.onSearchBoxMounted}\n      bounds={props.bounds}\n      onPlacesChanged={props.onPlacesChanged}\n    >\n      <input\n        type="text"\n        placeholder="Customized your placeholder"\n        style={{\n          boxSizing: `border-box`,\n          border: `1px solid transparent`,\n          width: `240px`,\n          height: `32px`,\n          padding: `0 12px`,\n          borderRadius: `3px`,\n          boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,\n          fontSize: `14px`,\n          outline: `none`,\n          textOverflow: `ellipses`,\n        }}\n      />\n    </StandaloneSearchBox>\n    <ol>\n      {props.places.map(({ place_id, formatted_address, geometry: { location } }) =>\n        <li key={place_id}>\n          {formatted_address}\n          {" at "}\n          ({location.lat()}, {location.lng()})\n        </li>\n      )}\n    </ol>\n  </div>\n);\n\n<PlacesWithStandaloneSearchBox />',
         settings: {},
         evalInContext: i,
       },
@@ -37728,7 +37728,7 @@
       {
         type: "markdown",
         content:
-          'There\'re some steps to take to create your custom map components. Follow on:\n\n### Step 1\n\n**Everything inside a <GoogleMap> component will be mounted automatically on the map**\nAnd it will be automatically unmounted from the map if you don\'t render it.\n\n```js\n<span class="hljs-keyword">import</span> { GoogleMap, Marker } <span class="hljs-keyword">from</span> <span class="hljs-string">"react-google-maps"</span>\n\n<span class="hljs-keyword">const</span> MyMapComponent = <span class="hljs-function">(<span class="hljs-params">props</span>) =&gt;</span>\n  &lt;GoogleMap\n    defaultZoom={<span class="hljs-number">8</span>}\n    defaultCenter={{ <span class="hljs-attr">lat</span>: <span class="hljs-number">-34.397</span>, <span class="hljs-attr">lng</span>: <span class="hljs-number">150.644</span> }}\n  &gt;\n    {props.isMarkerShown &amp;&amp; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Marker</span> <span class="hljs-attr">position</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">lat:</span> <span class="hljs-attr">-34.397</span>, <span class="hljs-attr">lng:</span> <span class="hljs-attr">150.644</span> }} /&gt;</span>}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">GoogleMap</span>&gt;</span></span>\n\n&lt;MyMapComponent isMarkerShown /&gt;<span class="hljs-comment">// Map with a Marker</span>\n&lt;MyMapComponent isMarkerShown={<span class="hljs-literal">false</span>} /&gt;<span class="hljs-comment">// Just only Map</span>\n```\n\n### Step 2\n\nIn order to initialize the `MyMapComponent` with DOM instances, you\'ll need to wrap it with [`withGoogleMap`][withgooglemap] HOC.\n\n```js\n<span class="hljs-keyword">import</span> { withGoogleMap, GoogleMap, Marker } <span class="hljs-keyword">from</span> <span class="hljs-string">"react-google-maps"</span>\n\n<span class="hljs-keyword">const</span> MyMapComponent = withGoogleMap(<span class="hljs-function">(<span class="hljs-params">props</span>) =&gt;</span>\n  &lt;GoogleMap\n    defaultZoom={<span class="hljs-number">8</span>}\n    defaultCenter={{ <span class="hljs-attr">lat</span>: <span class="hljs-number">-34.397</span>, <span class="hljs-attr">lng</span>: <span class="hljs-number">150.644</span> }}\n  &gt;\n    {props.isMarkerShown &amp;&amp; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Marker</span> <span class="hljs-attr">position</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">lat:</span> <span class="hljs-attr">-34.397</span>, <span class="hljs-attr">lng:</span> <span class="hljs-attr">150.644</span> }} /&gt;</span>}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">GoogleMap</span>&gt;</span></span>\n)\n\n&lt;MyMapComponent isMarkerShown /&gt;<span class="hljs-comment">// Map with a Marker</span>\n&lt;MyMapComponent isMarkerShown={<span class="hljs-literal">false</span>} /&gt;<span class="hljs-comment">// Just only Map</span>\n```\n\n### Step 3\n\nIn order to correctly load [Google Maps JavaScript API v3][gmjsav3], you\'ll need to wrap it with [`withScriptjs`][withscriptjs] HOC.\n\n```js\n<span class="hljs-keyword">import</span> { withScriptjs, withGoogleMap, GoogleMap, Marker } <span class="hljs-keyword">from</span> <span class="hljs-string">"react-google-maps"</span>\n\n<span class="hljs-keyword">const</span> MyMapComponent = withScriptjs(withGoogleMap(<span class="hljs-function">(<span class="hljs-params">props</span>) =&gt;</span>\n  &lt;GoogleMap\n    defaultZoom={<span class="hljs-number">8</span>}\n    defaultCenter={{ <span class="hljs-attr">lat</span>: <span class="hljs-number">-34.397</span>, <span class="hljs-attr">lng</span>: <span class="hljs-number">150.644</span> }}\n  &gt;\n    {props.isMarkerShown &amp;&amp; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Marker</span> <span class="hljs-attr">position</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">lat:</span> <span class="hljs-attr">-34.397</span>, <span class="hljs-attr">lng:</span> <span class="hljs-attr">150.644</span> }} /&gt;</span>}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">GoogleMap</span>&gt;</span></span>\n))\n\n&lt;MyMapComponent isMarkerShown /&gt;<span class="hljs-comment">// Map with a Marker</span>\n&lt;MyMapComponent isMarkerShown={<span class="hljs-literal">false</span>} /&gt;<span class="hljs-comment">// Just only Map</span>\n```\n\n_If you don\'t use `withScriptjs`, you have to put a `<script/>` tag for [Google Maps JavaScript API v3][gmjsav3] in your HTML\'s `<head/>` element_\n\n### Step 4\n\nNotice there\'re some required props for [`withGoogleMap`][withgooglemap] and [`withScriptjs`][withscriptjs] HOC.\n\n```js\n<span class="hljs-keyword">import</span> { withScriptjs, withGoogleMap, GoogleMap, Marker } <span class="hljs-keyword">from</span> <span class="hljs-string">"react-google-maps"</span>\n\n<span class="hljs-keyword">const</span> MyMapComponent = withScriptjs(withGoogleMap(<span class="hljs-function">(<span class="hljs-params">props</span>) =&gt;</span>\n  &lt;GoogleMap\n    defaultZoom={<span class="hljs-number">8</span>}\n    defaultCenter={{ <span class="hljs-attr">lat</span>: <span class="hljs-number">-34.397</span>, <span class="hljs-attr">lng</span>: <span class="hljs-number">150.644</span> }}\n  &gt;\n    {props.isMarkerShown &amp;&amp; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Marker</span> <span class="hljs-attr">position</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">lat:</span> <span class="hljs-attr">-34.397</span>, <span class="hljs-attr">lng:</span> <span class="hljs-attr">150.644</span> }} /&gt;</span>}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">GoogleMap</span>&gt;</span></span>\n))\n\n&lt;MyMapComponent\n  isMarkerShown\n  googleMapURL=<span class="hljs-string">"https://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=geometry,drawing,places"</span>\n  loadingElement={&lt;div style={{ <span class="hljs-attr">height</span>: <span class="hljs-string">`100%`</span> }} /&gt;}\n  containerElement={&lt;div style={{ <span class="hljs-attr">height</span>: <span class="hljs-string">`400px`</span> }} /&gt;}\n  mapElement={&lt;div style={{ <span class="hljs-attr">height</span>: <span class="hljs-string">`100%`</span> }} /&gt;}\n/&gt;\n```\n\nFor _simplicity_, in this documentation, I will use [`recompose`][recompose] to simplify the component. It\'ll look something like this with `recompose`:\n\n```js\n<span class="hljs-keyword">import</span> { compose, withProps } <span class="hljs-keyword">from</span> <span class="hljs-string">"recompose"</span>\n<span class="hljs-keyword">import</span> { withScriptjs, withGoogleMap, GoogleMap, Marker } <span class="hljs-keyword">from</span> <span class="hljs-string">"react-google-maps"</span>\n\n<span class="hljs-keyword">const</span> MyMapComponent = compose(\n  withProps({\n    <span class="hljs-attr">googleMapURL</span>: <span class="hljs-string">"https://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=geometry,drawing,places"</span>,\n    <span class="hljs-attr">loadingElement</span>: &lt;div style={{ height: `100%` }} /&gt;,\n    containerElement: &lt;div style={{ height: `400px` }} /&gt;,\n    mapElement: &lt;div style={{ height: `100%` }} /&gt;,\n  }),\n  withScriptjs,\n  withGoogleMap\n)((props) =&gt;\n  &lt;GoogleMap\n    defaultZoom={8}\n    defaultCenter={{ lat: -34.397, lng: 150.644 }}\n  &gt;\n    {props.isMarkerShown &amp;&amp; &lt;Marker position={{ lat: -34.397, lng: 150.644 }} /&gt;}\n  &lt;/GoogleMap&gt;\n))\n\n&lt;MyMapComponent isMarkerShown /&gt;\n```\n\n### Step 5\n\nImplement your own state transition logic with `MyMapComponent`!\n\n```js\n<span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>\n<span class="hljs-keyword">import</span> { compose, withProps } <span class="hljs-keyword">from</span> <span class="hljs-string">"recompose"</span>\n<span class="hljs-keyword">import</span> { withScriptjs, withGoogleMap, GoogleMap, Marker } <span class="hljs-keyword">from</span> <span class="hljs-string">"react-google-maps"</span>\n\n<span class="hljs-keyword">const</span> MyMapComponent = compose(\n  withProps({\n    <span class="hljs-attr">googleMapURL</span>: <span class="hljs-string">"https://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=geometry,drawing,places"</span>,\n    <span class="hljs-attr">loadingElement</span>: &lt;div style={{ height: `100%` }} /&gt;,\n    containerElement: &lt;div style={{ height: `400px` }} /&gt;,\n    mapElement: &lt;div style={{ height: `100%` }} /&gt;,\n  }),\n  withScriptjs,\n  withGoogleMap\n)((props) =&gt;\n  &lt;GoogleMap\n    defaultZoom={8}\n    defaultCenter={{ lat: -34.397, lng: 150.644 }}\n  &gt;\n    {props.isMarkerShown &amp;&amp; &lt;Marker position={{ lat: -34.397, lng: 150.644 }} onClick={props.onMarkerClick} /&gt;}\n  &lt;/GoogleMap&gt;\n))\n\nclass MyFancyComponent extends React.PureComponent {\n  state = {\n    isMarkerShown: false,\n  }\n\n  componentDidMount() {\n    this.delayedShowMarker()\n  }\n\n  delayedShowMarker = () =&gt; {\n    setTimeout(() =&gt; {\n      this.setState({ isMarkerShown: true })\n    }, 3000)\n  }\n\n  handleMarkerClick = () =&gt; {\n    this.setState({ isMarkerShown: false })\n    this.delayedShowMarker()\n  }\n\n  render() {\n    return (\n      &lt;MyMapComponent\n        isMarkerShown={this.state.isMarkerShown}\n        onMarkerClick={this.handleMarkerClick}\n      /&gt;\n    )\n  }\n}\n```\n\n[withgooglemap]: https://tomchentw.github.io/react-google-maps/#withgooglemap\n\n[gmjsav3]: https://developers.google.com/maps/documentation/javascript/\n\n[withscriptjs]: https://tomchentw.github.io/react-google-maps/#withscriptjs\n\n[recompose]: https://github.com/acdlite/recompose/blob/master/docs/API.md',
+          'There\'re some steps to take to create your custom map components. Follow on:\n\n### Step 1\n\n**Everything inside a <GoogleMap> component will be mounted automatically on the map**\nAnd it will be automatically unmounted from the map if you don\'t render it.\n\n```js\n<span class="hljs-keyword">import</span> { GoogleMap, Marker } <span class="hljs-keyword">from</span> <span class="hljs-string">"@cosva-lab/react-google-maps"</span>\n\n<span class="hljs-keyword">const</span> MyMapComponent = <span class="hljs-function">(<span class="hljs-params">props</span>) =&gt;</span>\n  &lt;GoogleMap\n    defaultZoom={<span class="hljs-number">8</span>}\n    defaultCenter={{ <span class="hljs-attr">lat</span>: <span class="hljs-number">-34.397</span>, <span class="hljs-attr">lng</span>: <span class="hljs-number">150.644</span> }}\n  &gt;\n    {props.isMarkerShown &amp;&amp; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Marker</span> <span class="hljs-attr">position</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">lat:</span> <span class="hljs-attr">-34.397</span>, <span class="hljs-attr">lng:</span> <span class="hljs-attr">150.644</span> }} /&gt;</span>}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">GoogleMap</span>&gt;</span></span>\n\n&lt;MyMapComponent isMarkerShown /&gt;<span class="hljs-comment">// Map with a Marker</span>\n&lt;MyMapComponent isMarkerShown={<span class="hljs-literal">false</span>} /&gt;<span class="hljs-comment">// Just only Map</span>\n```\n\n### Step 2\n\nIn order to initialize the `MyMapComponent` with DOM instances, you\'ll need to wrap it with [`withGoogleMap`][withgooglemap] HOC.\n\n```js\n<span class="hljs-keyword">import</span> { withGoogleMap, GoogleMap, Marker } <span class="hljs-keyword">from</span> <span class="hljs-string">"@cosva-lab/react-google-maps"</span>\n\n<span class="hljs-keyword">const</span> MyMapComponent = withGoogleMap(<span class="hljs-function">(<span class="hljs-params">props</span>) =&gt;</span>\n  &lt;GoogleMap\n    defaultZoom={<span class="hljs-number">8</span>}\n    defaultCenter={{ <span class="hljs-attr">lat</span>: <span class="hljs-number">-34.397</span>, <span class="hljs-attr">lng</span>: <span class="hljs-number">150.644</span> }}\n  &gt;\n    {props.isMarkerShown &amp;&amp; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Marker</span> <span class="hljs-attr">position</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">lat:</span> <span class="hljs-attr">-34.397</span>, <span class="hljs-attr">lng:</span> <span class="hljs-attr">150.644</span> }} /&gt;</span>}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">GoogleMap</span>&gt;</span></span>\n)\n\n&lt;MyMapComponent isMarkerShown /&gt;<span class="hljs-comment">// Map with a Marker</span>\n&lt;MyMapComponent isMarkerShown={<span class="hljs-literal">false</span>} /&gt;<span class="hljs-comment">// Just only Map</span>\n```\n\n### Step 3\n\nIn order to correctly load [Google Maps JavaScript API v3][gmjsav3], you\'ll need to wrap it with [`withScriptjs`][withscriptjs] HOC.\n\n```js\n<span class="hljs-keyword">import</span> { withScriptjs, withGoogleMap, GoogleMap, Marker } <span class="hljs-keyword">from</span> <span class="hljs-string">"@cosva-lab/react-google-maps"</span>\n\n<span class="hljs-keyword">const</span> MyMapComponent = withScriptjs(withGoogleMap(<span class="hljs-function">(<span class="hljs-params">props</span>) =&gt;</span>\n  &lt;GoogleMap\n    defaultZoom={<span class="hljs-number">8</span>}\n    defaultCenter={{ <span class="hljs-attr">lat</span>: <span class="hljs-number">-34.397</span>, <span class="hljs-attr">lng</span>: <span class="hljs-number">150.644</span> }}\n  &gt;\n    {props.isMarkerShown &amp;&amp; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Marker</span> <span class="hljs-attr">position</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">lat:</span> <span class="hljs-attr">-34.397</span>, <span class="hljs-attr">lng:</span> <span class="hljs-attr">150.644</span> }} /&gt;</span>}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">GoogleMap</span>&gt;</span></span>\n))\n\n&lt;MyMapComponent isMarkerShown /&gt;<span class="hljs-comment">// Map with a Marker</span>\n&lt;MyMapComponent isMarkerShown={<span class="hljs-literal">false</span>} /&gt;<span class="hljs-comment">// Just only Map</span>\n```\n\n_If you don\'t use `withScriptjs`, you have to put a `<script/>` tag for [Google Maps JavaScript API v3][gmjsav3] in your HTML\'s `<head/>` element_\n\n### Step 4\n\nNotice there\'re some required props for [`withGoogleMap`][withgooglemap] and [`withScriptjs`][withscriptjs] HOC.\n\n```js\n<span class="hljs-keyword">import</span> { withScriptjs, withGoogleMap, GoogleMap, Marker } <span class="hljs-keyword">from</span> <span class="hljs-string">"@cosva-lab/react-google-maps"</span>\n\n<span class="hljs-keyword">const</span> MyMapComponent = withScriptjs(withGoogleMap(<span class="hljs-function">(<span class="hljs-params">props</span>) =&gt;</span>\n  &lt;GoogleMap\n    defaultZoom={<span class="hljs-number">8</span>}\n    defaultCenter={{ <span class="hljs-attr">lat</span>: <span class="hljs-number">-34.397</span>, <span class="hljs-attr">lng</span>: <span class="hljs-number">150.644</span> }}\n  &gt;\n    {props.isMarkerShown &amp;&amp; <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Marker</span> <span class="hljs-attr">position</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">lat:</span> <span class="hljs-attr">-34.397</span>, <span class="hljs-attr">lng:</span> <span class="hljs-attr">150.644</span> }} /&gt;</span>}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">GoogleMap</span>&gt;</span></span>\n))\n\n&lt;MyMapComponent\n  isMarkerShown\n  googleMapURL=<span class="hljs-string">"https://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=geometry,drawing,places"</span>\n  loadingElement={&lt;div style={{ <span class="hljs-attr">height</span>: <span class="hljs-string">`100%`</span> }} /&gt;}\n  containerElement={&lt;div style={{ <span class="hljs-attr">height</span>: <span class="hljs-string">`400px`</span> }} /&gt;}\n  mapElement={&lt;div style={{ <span class="hljs-attr">height</span>: <span class="hljs-string">`100%`</span> }} /&gt;}\n/&gt;\n```\n\nFor _simplicity_, in this documentation, I will use [`recompose`][recompose] to simplify the component. It\'ll look something like this with `recompose`:\n\n```js\n<span class="hljs-keyword">import</span> { compose, withProps } <span class="hljs-keyword">from</span> <span class="hljs-string">"recompose"</span>\n<span class="hljs-keyword">import</span> { withScriptjs, withGoogleMap, GoogleMap, Marker } <span class="hljs-keyword">from</span> <span class="hljs-string">"@cosva-lab/react-google-maps"</span>\n\n<span class="hljs-keyword">const</span> MyMapComponent = compose(\n  withProps({\n    <span class="hljs-attr">googleMapURL</span>: <span class="hljs-string">"https://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=geometry,drawing,places"</span>,\n    <span class="hljs-attr">loadingElement</span>: &lt;div style={{ height: `100%` }} /&gt;,\n    containerElement: &lt;div style={{ height: `400px` }} /&gt;,\n    mapElement: &lt;div style={{ height: `100%` }} /&gt;,\n  }),\n  withScriptjs,\n  withGoogleMap\n)((props) =&gt;\n  &lt;GoogleMap\n    defaultZoom={8}\n    defaultCenter={{ lat: -34.397, lng: 150.644 }}\n  &gt;\n    {props.isMarkerShown &amp;&amp; &lt;Marker position={{ lat: -34.397, lng: 150.644 }} /&gt;}\n  &lt;/GoogleMap&gt;\n))\n\n&lt;MyMapComponent isMarkerShown /&gt;\n```\n\n### Step 5\n\nImplement your own state transition logic with `MyMapComponent`!\n\n```js\n<span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>\n<span class="hljs-keyword">import</span> { compose, withProps } <span class="hljs-keyword">from</span> <span class="hljs-string">"recompose"</span>\n<span class="hljs-keyword">import</span> { withScriptjs, withGoogleMap, GoogleMap, Marker } <span class="hljs-keyword">from</span> <span class="hljs-string">"@cosva-lab/react-google-maps"</span>\n\n<span class="hljs-keyword">const</span> MyMapComponent = compose(\n  withProps({\n    <span class="hljs-attr">googleMapURL</span>: <span class="hljs-string">"https://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=geometry,drawing,places"</span>,\n    <span class="hljs-attr">loadingElement</span>: &lt;div style={{ height: `100%` }} /&gt;,\n    containerElement: &lt;div style={{ height: `400px` }} /&gt;,\n    mapElement: &lt;div style={{ height: `100%` }} /&gt;,\n  }),\n  withScriptjs,\n  withGoogleMap\n)((props) =&gt;\n  &lt;GoogleMap\n    defaultZoom={8}\n    defaultCenter={{ lat: -34.397, lng: 150.644 }}\n  &gt;\n    {props.isMarkerShown &amp;&amp; &lt;Marker position={{ lat: -34.397, lng: 150.644 }} onClick={props.onMarkerClick} /&gt;}\n  &lt;/GoogleMap&gt;\n))\n\nclass MyFancyComponent extends React.PureComponent {\n  state = {\n    isMarkerShown: false,\n  }\n\n  componentDidMount() {\n    this.delayedShowMarker()\n  }\n\n  delayedShowMarker = () =&gt; {\n    setTimeout(() =&gt; {\n      this.setState({ isMarkerShown: true })\n    }, 3000)\n  }\n\n  handleMarkerClick = () =&gt; {\n    this.setState({ isMarkerShown: false })\n    this.delayedShowMarker()\n  }\n\n  render() {\n    return (\n      &lt;MyMapComponent\n        isMarkerShown={this.state.isMarkerShown}\n        onMarkerClick={this.handleMarkerClick}\n      /&gt;\n    )\n  }\n}\n```\n\n[withgooglemap]: https://tomchentw.github.io/@cosva-lab/react-google-maps/#withgooglemap\n\n[gmjsav3]: https://developers.google.com/maps/documentation/javascript/\n\n[withscriptjs]: https://tomchentw.github.io/@cosva-lab/react-google-maps/#withscriptjs\n\n[recompose]: https://github.com/acdlite/recompose/blob/master/docs/API.md',
       },
     ]
   },
@@ -37748,7 +37748,7 @@
       {
         type: "markdown",
         content:
-          '```sh\nnpm install --save react-google-maps <span class="hljs-comment"># or</span>\nyarn add react-google-maps\n```',
+          '```sh\nnpm install --save @cosva-lab/react-google-maps <span class="hljs-comment"># or</span>\nyarn add @cosva-lab/react-google-maps\n```',
       },
     ]
   },
@@ -37768,7 +37768,7 @@
       {
         type: "markdown",
         content:
-          "[`react-google-maps`][react-google-maps] provides a set of React components wrapping the underlying [Google Maps JavaScript API v3][gmjsav3] instances. The wrapping simply do:\n\n-   **props delegation** \n-   **events as callbacks**\n-   **lifecycle management**\n-   **auto-mount on map**\n\nThat's it. _Nothing more_. If you find some limitations, that might be due to [Google Maps JavaScript API v3][gmjsav3] but not [`react-google-maps`][react-google-maps].\n\nThis documentation site is created with the awesome [react-styleguidist][react-styleguidist]. It comes with components documentation with props, public methods and **live demo**. The live demos come with **live updates** by clicking the `CODE` button on the bottom-left corner and editing there. \n\n[react-google-maps]: https://tomchentw.github.io/react-google-maps/\n\n[gmjsav3]: https://developers.google.com/maps/documentation/javascript/\n\n[react-styleguidist]: https://react-styleguidist.js.org/",
+          "[`@cosva-lab/react-google-maps`][@cosva-lab/react-google-maps] provides a set of React components wrapping the underlying [Google Maps JavaScript API v3][gmjsav3] instances. The wrapping simply do:\n\n-   **props delegation** \n-   **events as callbacks**\n-   **lifecycle management**\n-   **auto-mount on map**\n\nThat's it. _Nothing more_. If you find some limitations, that might be due to [Google Maps JavaScript API v3][gmjsav3] but not [`@cosva-lab/react-google-maps`][@cosva-lab/react-google-maps].\n\nThis documentation site is created with the awesome [react-styleguidist][react-styleguidist]. It comes with components documentation with props, public methods and **live demo**. The live demos come with **live updates** by clicking the `CODE` button on the bottom-left corner and editing there. \n\n[@cosva-lab/react-google-maps]: https://tomchentw.github.io/@cosva-lab/react-google-maps/\n\n[gmjsav3]: https://developers.google.com/maps/documentation/javascript/\n\n[react-styleguidist]: https://react-styleguidist.js.org/",
       },
     ]
   },
@@ -37788,7 +37788,7 @@
       {
         type: "markdown",
         content:
-          '### Props\n\n-   containerElement: ReactElement\n-   mapElement: ReactElement\n\n### Usage\n\n```jsx\n<span class="hljs-keyword">import</span> {\n  withGoogleMap,\n  GoogleMap,\n  Marker,\n} <span class="hljs-keyword">from</span> <span class="hljs-string">"react-google-maps"</span>;\n\n<span class="hljs-keyword">const</span> MapWithAMarker = withGoogleMap(<span class="hljs-function"><span class="hljs-params">props</span> =&gt;</span>\n  &lt;GoogleMap\n    defaultZoom={<span class="hljs-number">8</span>}\n    defaultCenter={{ <span class="hljs-attr">lat</span>: <span class="hljs-number">-34.397</span>, <span class="hljs-attr">lng</span>: <span class="hljs-number">150.644</span> }}\n  &gt;\n    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Marker</span>\n      <span class="hljs-attr">position</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">lat:</span> <span class="hljs-attr">-34.397</span>, <span class="hljs-attr">lng:</span> <span class="hljs-attr">150.644</span> }}\n    /&gt;</span>\n  <span class="hljs-tag">&lt;/<span class="hljs-name">GoogleMap</span>&gt;</span></span>\n);\n\n&lt;MapWithAMarker\n  containerElement={&lt;div style={{ height: `400px` }} /&gt;}\n  mapElement={&lt;div style={{ height: `100%` }} /&gt;}\n/&gt;\n```',
+          '### Props\n\n-   containerElement: ReactElement\n-   mapElement: ReactElement\n\n### Usage\n\n```jsx\n<span class="hljs-keyword">import</span> {\n  withGoogleMap,\n  GoogleMap,\n  Marker,\n} <span class="hljs-keyword">from</span> <span class="hljs-string">"@cosva-lab/react-google-maps"</span>;\n\n<span class="hljs-keyword">const</span> MapWithAMarker = withGoogleMap(<span class="hljs-function"><span class="hljs-params">props</span> =&gt;</span>\n  &lt;GoogleMap\n    defaultZoom={<span class="hljs-number">8</span>}\n    defaultCenter={{ <span class="hljs-attr">lat</span>: <span class="hljs-number">-34.397</span>, <span class="hljs-attr">lng</span>: <span class="hljs-number">150.644</span> }}\n  &gt;\n    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Marker</span>\n      <span class="hljs-attr">position</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">lat:</span> <span class="hljs-attr">-34.397</span>, <span class="hljs-attr">lng:</span> <span class="hljs-attr">150.644</span> }}\n    /&gt;</span>\n  <span class="hljs-tag">&lt;/<span class="hljs-name">GoogleMap</span>&gt;</span></span>\n);\n\n&lt;MapWithAMarker\n  containerElement={&lt;div style={{ height: `400px` }} /&gt;}\n  mapElement={&lt;div style={{ height: `100%` }} /&gt;}\n/&gt;\n```',
       },
     ]
   },
@@ -37808,7 +37808,7 @@
       {
         type: "markdown",
         content:
-          '### Props\n\n-   googleMapURL: String\n-   loadingElement: ReactElement\n\n### Usage\n\n```jsx\n<span class="hljs-keyword">import</span> {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  Marker,\n} <span class="hljs-keyword">from</span> <span class="hljs-string">"react-google-maps"</span>;\n\n<span class="hljs-keyword">const</span> MapWithAMarker = withScriptjs(withGoogleMap(<span class="hljs-function"><span class="hljs-params">props</span> =&gt;</span>\n  &lt;GoogleMap\n    defaultZoom={<span class="hljs-number">8</span>}\n    defaultCenter={{ <span class="hljs-attr">lat</span>: <span class="hljs-number">-34.397</span>, <span class="hljs-attr">lng</span>: <span class="hljs-number">150.644</span> }}\n  &gt;\n    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Marker</span>\n      <span class="hljs-attr">position</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">lat:</span> <span class="hljs-attr">-34.397</span>, <span class="hljs-attr">lng:</span> <span class="hljs-attr">150.644</span> }}\n    /&gt;</span>\n  <span class="hljs-tag">&lt;/<span class="hljs-name">GoogleMap</span>&gt;</span></span>\n));\n\n&lt;MapWithAMarker\n  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&amp;v=3.exp&amp;libraries=geometry,drawing,places"\n  loadingElement={&lt;div style={{ height: `100%` }} /&gt;}\n  containerElement={&lt;div style={{ height: `400px` }} /&gt;}\n  mapElement={&lt;div style={{ height: `100%` }} /&gt;}\n/&gt;\n```',
+          '### Props\n\n-   googleMapURL: String\n-   loadingElement: ReactElement\n\n### Usage\n\n```jsx\n<span class="hljs-keyword">import</span> {\n  withScriptjs,\n  withGoogleMap,\n  GoogleMap,\n  Marker,\n} <span class="hljs-keyword">from</span> <span class="hljs-string">"@cosva-lab/react-google-maps"</span>;\n\n<span class="hljs-keyword">const</span> MapWithAMarker = withScriptjs(withGoogleMap(<span class="hljs-function"><span class="hljs-params">props</span> =&gt;</span>\n  &lt;GoogleMap\n    defaultZoom={<span class="hljs-number">8</span>}\n    defaultCenter={{ <span class="hljs-attr">lat</span>: <span class="hljs-number">-34.397</span>, <span class="hljs-attr">lng</span>: <span class="hljs-number">150.644</span> }}\n  &gt;\n    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Marker</span>\n      <span class="hljs-attr">position</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">lat:</span> <span class="hljs-attr">-34.397</span>, <span class="hljs-attr">lng:</span> <span class="hljs-attr">150.644</span> }}\n    /&gt;</span>\n  <span class="hljs-tag">&lt;/<span class="hljs-name">GoogleMap</span>&gt;</span></span>\n));\n\n&lt;MapWithAMarker\n  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&amp;v=3.exp&amp;libraries=geometry,drawing,places"\n  loadingElement={&lt;div style={{ height: `100%` }} /&gt;}\n  containerElement={&lt;div style={{ height: `400px` }} /&gt;}\n  mapElement={&lt;div style={{ height: `100%` }} /&gt;}\n/&gt;\n```',
       },
     ]
   },
@@ -41875,7 +41875,7 @@
               filepath: "src/components/addons/InfoBox.jsx",
               slug: "infobox",
               pathLine:
-                'import InfoBox from "react-google-maps/lib/components/addons/InfoBox";',
+                'import InfoBox from "@cosva-lab/react-google-maps/lib/components/addons/InfoBox";',
               module: n("./src/components/addons/InfoBox.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/addons/InfoBox.jsx"
@@ -41887,7 +41887,7 @@
               filepath: "src/components/addons/MarkerClusterer.jsx",
               slug: "markerclusterer",
               pathLine:
-                'import MarkerClusterer from "react-google-maps/lib/components/addons/MarkerClusterer";',
+                'import MarkerClusterer from "@cosva-lab/react-google-maps/lib/components/addons/MarkerClusterer";',
               module: n("./src/components/addons/MarkerClusterer.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/addons/MarkerClusterer.jsx"
@@ -41899,7 +41899,7 @@
               filepath: "src/components/addons/MarkerWithLabel.jsx",
               slug: "markerwithlabel",
               pathLine:
-                'import MarkerWithLabel from "react-google-maps/lib/components/addons/MarkerWithLabel";',
+                'import MarkerWithLabel from "@cosva-lab/react-google-maps/lib/components/addons/MarkerWithLabel";',
               module: n("./src/components/addons/MarkerWithLabel.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/addons/MarkerWithLabel.jsx"
@@ -41910,7 +41910,7 @@
             {
               filepath: "src/components/BicyclingLayer.jsx",
               slug: "bicyclinglayer",
-              pathLine: 'import { BicyclingLayer } from "react-google-maps";',
+              pathLine: 'import { BicyclingLayer } from "@cosva-lab/react-google-maps";',
               module: n("./src/components/BicyclingLayer.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/BicyclingLayer.jsx"
@@ -41921,7 +41921,7 @@
             {
               filepath: "src/components/Circle.jsx",
               slug: "circle",
-              pathLine: 'import { Circle } from "react-google-maps";',
+              pathLine: 'import { Circle } from "@cosva-lab/react-google-maps";',
               module: n("./src/components/Circle.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/Circle.jsx"
@@ -41933,7 +41933,7 @@
               filepath: "src/components/DirectionsRenderer.jsx",
               slug: "directionsrenderer",
               pathLine:
-                'import { DirectionsRenderer } from "react-google-maps";',
+                'import { DirectionsRenderer } from "@cosva-lab/react-google-maps";',
               module: n("./src/components/DirectionsRenderer.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/DirectionsRenderer.jsx"
@@ -41945,7 +41945,7 @@
               filepath: "src/components/drawing/DrawingManager.jsx",
               slug: "drawingmanager",
               pathLine:
-                'import DrawingManager from "react-google-maps/lib/components/drawing/DrawingManager";',
+                'import DrawingManager from "@cosva-lab/react-google-maps/lib/components/drawing/DrawingManager";',
               module: n("./src/components/drawing/DrawingManager.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/drawing/DrawingManager.jsx"
@@ -41957,7 +41957,7 @@
               filepath: "src/components/FusionTablesLayer.jsx",
               slug: "fusiontableslayer",
               pathLine:
-                'import { FusionTablesLayer } from "react-google-maps";',
+                'import { FusionTablesLayer } from "@cosva-lab/react-google-maps";',
               module: n("./src/components/FusionTablesLayer.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/FusionTablesLayer.jsx"
@@ -41968,7 +41968,7 @@
             {
               filepath: "src/components/GoogleMap.jsx",
               slug: "googlemap",
-              pathLine: 'import { GoogleMap } from "react-google-maps";',
+              pathLine: 'import { GoogleMap } from "@cosva-lab/react-google-maps";',
               module: n("./src/components/GoogleMap.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/GoogleMap.jsx"
@@ -41979,7 +41979,7 @@
             {
               filepath: "src/components/GroundOverlay.jsx",
               slug: "groundoverlay",
-              pathLine: 'import { GroundOverlay } from "react-google-maps";',
+              pathLine: 'import { GroundOverlay } from "@cosva-lab/react-google-maps";',
               module: n("./src/components/GroundOverlay.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/GroundOverlay.jsx"
@@ -41990,7 +41990,7 @@
             {
               filepath: "src/components/InfoWindow.jsx",
               slug: "infowindow",
-              pathLine: 'import { InfoWindow } from "react-google-maps";',
+              pathLine: 'import { InfoWindow } from "@cosva-lab/react-google-maps";',
               module: n("./src/components/InfoWindow.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/InfoWindow.jsx"
@@ -42001,7 +42001,7 @@
             {
               filepath: "src/components/KmlLayer.jsx",
               slug: "kmllayer",
-              pathLine: 'import { KmlLayer } from "react-google-maps";',
+              pathLine: 'import { KmlLayer } from "@cosva-lab/react-google-maps";',
               module: n("./src/components/KmlLayer.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/KmlLayer.jsx"
@@ -42012,7 +42012,7 @@
             {
               filepath: "src/components/Marker.jsx",
               slug: "marker",
-              pathLine: 'import { Marker } from "react-google-maps";',
+              pathLine: 'import { Marker } from "@cosva-lab/react-google-maps";',
               module: n("./src/components/Marker.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/Marker.jsx"
@@ -42023,7 +42023,7 @@
             {
               filepath: "src/components/OverlayView.jsx",
               slug: "overlayview",
-              pathLine: 'import { OverlayView } from "react-google-maps";',
+              pathLine: 'import { OverlayView } from "@cosva-lab/react-google-maps";',
               module: n("./src/components/OverlayView.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/OverlayView.jsx"
@@ -42035,7 +42035,7 @@
               filepath: "src/components/places/SearchBox.jsx",
               slug: "searchbox",
               pathLine:
-                'import SearchBox from "react-google-maps/lib/components/places/SearchBox";',
+                'import SearchBox from "@cosva-lab/react-google-maps/lib/components/places/SearchBox";',
               module: n("./src/components/places/SearchBox.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/places/SearchBox.jsx"
@@ -42047,7 +42047,7 @@
               filepath: "src/components/places/StandaloneSearchBox.jsx",
               slug: "standalonesearchbox",
               pathLine:
-                'import StandaloneSearchBox from "react-google-maps/lib/components/places/StandaloneSearchBox";',
+                'import StandaloneSearchBox from "@cosva-lab/react-google-maps/lib/components/places/StandaloneSearchBox";',
               module: n("./src/components/places/StandaloneSearchBox.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/places/StandaloneSearchBox.jsx"
@@ -42058,7 +42058,7 @@
             {
               filepath: "src/components/Polygon.jsx",
               slug: "polygon",
-              pathLine: 'import { Polygon } from "react-google-maps";',
+              pathLine: 'import { Polygon } from "@cosva-lab/react-google-maps";',
               module: n("./src/components/Polygon.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/Polygon.jsx"
@@ -42069,7 +42069,7 @@
             {
               filepath: "src/components/Polyline.jsx",
               slug: "polyline",
-              pathLine: 'import { Polyline } from "react-google-maps";',
+              pathLine: 'import { Polyline } from "@cosva-lab/react-google-maps";',
               module: n("./src/components/Polyline.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/Polyline.jsx"
@@ -42080,7 +42080,7 @@
             {
               filepath: "src/components/Rectangle.jsx",
               slug: "rectangle",
-              pathLine: 'import { Rectangle } from "react-google-maps";',
+              pathLine: 'import { Rectangle } from "@cosva-lab/react-google-maps";',
               module: n("./src/components/Rectangle.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/Rectangle.jsx"
@@ -42092,7 +42092,7 @@
               filepath: "src/components/StreetViewPanorama.jsx",
               slug: "streetviewpanorama",
               pathLine:
-                'import { StreetViewPanorama } from "react-google-maps";',
+                'import { StreetViewPanorama } from "@cosva-lab/react-google-maps";',
               module: n("./src/components/StreetViewPanorama.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/StreetViewPanorama.jsx"
@@ -42103,7 +42103,7 @@
             {
               filepath: "src/components/TrafficLayer.jsx",
               slug: "trafficlayer",
-              pathLine: 'import { TrafficLayer } from "react-google-maps";',
+              pathLine: 'import { TrafficLayer } from "@cosva-lab/react-google-maps";',
               module: n("./src/components/TrafficLayer.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/TrafficLayer.jsx"
@@ -42115,7 +42115,7 @@
               filepath: "src/components/visualization/HeatmapLayer.jsx",
               slug: "heatmaplayer",
               pathLine:
-                'import HeatmapLayer from "react-google-maps/lib/components/visualization/HeatmapLayer";',
+                'import HeatmapLayer from "@cosva-lab/react-google-maps/lib/components/visualization/HeatmapLayer";',
               module: n("./src/components/visualization/HeatmapLayer.jsx"),
               props: n(
                 "./node_modules/react-styleguidist/loaders/props-loader.js!./src/components/visualization/HeatmapLayer.jsx"
@@ -45254,7 +45254,7 @@
         )
         o()(
           !e.url || !e.bounds,
-          "\nFor GroundOveray, url and bounds are passed in to constructor and are immutable\n after iinstantiated. This is the behavior of Google Maps JavaScript API v3 (\n See https://developers.google.com/maps/documentation/javascript/reference#GroundOverlay)\n Hence, use the corresponding two props provided by `react-google-maps`.\n They're prefixed with _default_ (defaultUrl, defaultBounds).\n\n In some cases, you'll need the GroundOverlay component to reflect the changes\n of url and bounds. You can leverage the React's key property to remount the\n component. Typically, just `key={url}` would serve your need.\n See https://github.com/tomchentw/react-google-maps/issues/655\n"
+          "\nFor GroundOveray, url and bounds are passed in to constructor and are immutable\n after iinstantiated. This is the behavior of Google Maps JavaScript API v3 (\n See https://developers.google.com/maps/documentation/javascript/reference#GroundOverlay)\n Hence, use the corresponding two props provided by `@cosva-lab/react-google-maps`.\n They're prefixed with _default_ (defaultUrl, defaultBounds).\n\n In some cases, you'll need the GroundOverlay component to reflect the changes\n of url and bounds. You can leverage the React's key property to remount the\n component. Typically, just `key={url}` would serve your need.\n See https://github.com/@cosva-lab/react-google-maps/issues/655\n"
         )
         var r = new google.maps.GroundOverlay(
           e.defaultUrl || e.url,
@@ -49343,7 +49343,7 @@
                   if (!this.state.map && null !== e) {
                     s()(
                       "undefined" != typeof google,
-                      "Make sure you've put a <script> tag in your <head> element to load Google Maps JavaScript API v3.\n If you're looking for built-in support to load it for you, use the \"async/ScriptjsLoader\" instead.\n See https://github.com/tomchentw/react-google-maps/pull/168"
+                      "Make sure you've put a <script> tag in your <head> element to load Google Maps JavaScript API v3.\n If you're looking for built-in support to load it for you, use the \"async/ScriptjsLoader\" instead.\n See https://github.com/@cosva-lab/react-google-maps/pull/168"
                     )
                     var t = new google.maps.Map(e)
                     this.setState({ map: t })

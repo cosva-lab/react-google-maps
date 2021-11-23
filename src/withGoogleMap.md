@@ -1,29 +1,20 @@
 ### Props
 
-* containerElement: ReactElement
-* mapElement: ReactElement
+- containerElement: ReactElement
+- mapElement: ReactElement
 
 ### Usage
 
 ```jsx static
-import {
-  withGoogleMap,
-  GoogleMap,
-  Marker,
-} from "react-google-maps";
+import { withGoogleMap, GoogleMap, Marker } from "@cosva-lab/react-google-maps"
 
-const MapWithAMarker = withGoogleMap(props =>
-  <GoogleMap
-    defaultZoom={8}
-    defaultCenter={{ lat: -34.397, lng: 150.644 }}
-  >
-    <Marker
-      position={{ lat: -34.397, lng: 150.644 }}
-    />
+const MapWithAMarker = withGoogleMap((props) => (
+  <GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
+    <Marker position={{ lat: -34.397, lng: 150.644 }} />
   </GoogleMap>
-);
+))
 
-<MapWithAMarker
+;<MapWithAMarker
   containerElement={<div style={{ height: `400px` }} />}
   mapElement={<div style={{ height: `100%` }} />}
 />

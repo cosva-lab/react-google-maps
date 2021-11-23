@@ -6,8 +6,8 @@ const {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-} = require("react-google-maps");
-const { InfoBox } = require("react-google-maps/lib/components/addons/InfoBox");
+} = require("@cosva-lab/react-google-maps");
+const { InfoBox } = require("@cosva-lab/react-google-maps/lib/components/addons/InfoBox");
 const demoFancyMapStyles = require("./demoFancyMapStyles.json");
 
 const StyledMapWithAnInfoBox = compose(

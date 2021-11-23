@@ -1,4 +1,4 @@
-describe("react-google-maps module (index.js)", () => {
+describe("@cosva-lab/react-google-maps module (index.js)", () => {
   const {
     __esModule,
     default: DefaultExport,

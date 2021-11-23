@@ -9,7 +9,7 @@ const {
   GoogleMap,
   Marker,
   InfoWindow,
-} = require("react-google-maps");
+} = require("@cosva-lab/react-google-maps");
 
 const MapWithAMakredInfoWindow = compose(
   withStateHandlers(() => ({

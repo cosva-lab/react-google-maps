@@ -7,7 +7,7 @@ const {
   withGoogleMap,
   GoogleMap,
   DirectionsRenderer,
-} = require("react-google-maps");
+} = require("@cosva-lab/react-google-maps");
 
 const MapWithADirectionsRenderer = compose(
   withProps({

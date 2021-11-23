@@ -7,7 +7,7 @@ const {
   withGoogleMap,
   GoogleMap,
   Marker,
-} = require("react-google-maps");
+} = require("@cosva-lab/react-google-maps");
 
 const MapWithAMarker = compose(
   withScriptjs,

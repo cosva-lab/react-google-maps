@@ -7,7 +7,7 @@ const {
   withGoogleMap,
   GoogleMap,
   FusionTablesLayer,
-} = require("react-google-maps");
+} = require("@cosva-lab/react-google-maps");
 
 const MapWithAFusionTablesLayer = compose(
   withProps({
